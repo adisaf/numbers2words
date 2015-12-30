@@ -1,17 +1,18 @@
 {
 	"name": "numbers2words",
 	"description": "Numbers to words converter.",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"bugs": {
-		"url": "https://github.com/Kibo/numbers2words/issues"
+		"url": "https://github.com/adisaf/numbers2words/issues"
 	},
 	"author": "Tomas Jurman <tomasjurman@gmail.com>",
+    "contributors": "Fawaz Adisa <adisaf@programmer.net>",
 	"license": "MIT",
 	"keywords": ["number", "word", "converter"],
 	"main": "./build/numbers2words.min",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Kibo/numbers2words.git"
+		"url": "https://github.com/adisaf/numbers2words.git"
 	},
 	"devDependencies": {
 		"grunt": "^0.4.4",
