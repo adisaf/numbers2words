@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.12.0.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="http://code.jquery.com/qunit/qunit-1.12.0.js"></script>	
+		<script type="text/javascript" src="../src/polyfill/polyfill.js"></script>
+		<script type="text/javascript" src="../src/numbers2words.js"></script>
+		<script type="text/javascript" src="../src/locales/fr_FR.js"></script>	
+		<script>
+			window.onload = function( ) {												
+				test( "toWords", function( ) {									
+					var translator = new T2W("FR_FR");
+					
+					equal( translator.toWords(0), "zero");	
+					equal( translator.toWords(1), "un");
+					equal( translator.toWords(9), "neuf");														
+					
+					equal( translator.toWords(10), "dix");	
+					equal( translator.toWords(11), "onze");
+					equal( translator.toWords(19), "dix-neuf");
+					equal( translator.toWords(20), "vingt");
+					equal( translator.toWords(21), "vingt-un");
+					equal( translator.toWords(99), "quatre-vingt-dix-neuf");
+					
+					equal( translator.toWords(100), "cent");
+					equal( translator.toWords(101), "cent et un");
+					equal( translator.toWords(109), "cent et neuf");
+					equal( translator.toWords(110), "cent et dix");
+					equal( translator.toWords(111), "cent et onze");
+					equal( translator.toWords(119), "cent et dix-neuf");
+					equal( translator.toWords(199), "cent et quatre-vingt-dix-neuf");
+					equal( translator.toWords(999), "neuf cent et quatre-vingt-dix-neuf");
+					
+					equal( translator.toWords(1000), "mille");
+					equal( translator.toWords(1001), "mille et un");
+					equal( translator.toWords(1011), "mille et onze");
+					equal( translator.toWords(1021), "mille et vingt-un");					
+					equal( translator.toWords(9000), "neuf mille");
+					equal( translator.toWords(9001), "neuf mille et un");
+					equal( translator.toWords(9011), "neuf mille et onze");
+					equal( translator.toWords(9021), "neuf mille et vingt-un");	
+					equal( translator.toWords(9999), "neuf mille neuf cent et quatre-vingt-dix-neuf");
+                    
+                    equal( translator.toWords(100000), "cent mille");
+					
+					equal( translator.toWords(11000), "onze mille");
+					equal( translator.toWords(11001), "onze mille et un");
+					equal( translator.toWords(11011), "onze mille et onze");
+					equal( translator.toWords(11021), "onze mille et vingt-un");					
+					equal( translator.toWords(99000), "quatre-vingt-dix-neuf mille");
+					equal( translator.toWords(99001), "quatre-vingt-dix-neuf mille et un");
+					equal( translator.toWords(99011), "quatre-vingt-dix-neuf mille et onze");
+					equal( translator.toWords(99021), "quatre-vingt-dix-neuf mille et vingt-un");
+					
+					equal( translator.toWords(1000000), "un million");
+					equal( translator.toWords(1000001), "un million et un");
+					equal( translator.toWords(1000011), "un million et onze");
+					equal( translator.toWords(1000021), "un million et vingt-un");
+					equal( translator.toWords(1010000), "un million dix mille");
+					equal( translator.toWords(1010001), "un million dix mille et un");					
+					equal( translator.toWords(1021001), "un million vingt-un mille et un");					
+					equal( translator.toWords(1110000), "un million un cent et dix mille");
+					equal( translator.toWords(11000000), "onze million");
+					equal( translator.toWords(21000000), "vingt-un million");
+					equal( translator.toWords(999999999), "neuf cent et quatre-vingt-dix-neuf million neuf cent et quatre-vingt-dix-neuf mille neuf cent et quatre-vingt-dix-neuf");														
+				});
+			};// onload
+		</script>
+	</head>
+	<body>
+		<h1 id="qunit-header">FR_FR Locale</h1>
+		<h2 id="qunit-banner"></h2>
+		<div id="qunit-testrunner-toolbar"></div>
+		<h2 id="qunit-userAgent"></h2>
+		<ol id="qunit-tests"></ol>
+		<div id="qunit-fixture">
+			test markup, will be hidden
+		</div>
+	</body>
+</html>

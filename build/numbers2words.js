@@ -94,8 +94,13 @@ T2W.prototype.toWords = function( number ){
 			message: "The function 'translate' is not implemented."			
 		};
 	}
-				
-	return this.translate( this.tokenize(number, this._tokenLength));
+    
+    var value = this.translate( this.tokenize(number, this._tokenLength));
+    var stR = number.toString();
+	if(stR.length  == 3 || stR.length  == 4 || stR.length  == 6){
+        value = value.replace(/\un\s/, '');
+    }
+	return value;
 };
 
 /**
